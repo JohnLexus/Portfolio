@@ -112,16 +112,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .work-tag{font-family:var(--fm);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pop);display:inline-block;margin-bottom:10px;}
 .work-block-title{font-family:var(--fd);font-size:clamp(28px,4vw,52px);letter-spacing:0.04em;line-height:1;margin-bottom:12px;}
 .work-block-desc{font-size:14px;color:var(--mu2);font-weight:300;line-height:1.8;max-width:700px;margin-bottom:28px;}
-.vid-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:700px;}
-.vid-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px;align-items:start;}
-.vid-wrap{position:relative;width:100%;background:var(--card);border:1px solid var(--b1);border-radius:4px;overflow:hidden;}
+.vid-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.vid-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:start;}
+.vid-wrap{position:relative;width:100%;background:var(--card);border:1px solid var(--b1);}
 .vid-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;display:block;}
 .vid-16-9{padding-bottom:56.25%;}
-.vid-9-16{padding-bottom:120%;}
-.reel-link-card{background:var(--card);border:1px solid var(--b1);display:flex;align-items:center;justify-content:center;min-height:180px;}
+.vid-9-16{padding-bottom:177.78%;}
+.reel-link-card{background:var(--card);border:1px solid var(--b1);display:flex;align-items:center;justify-content:center;min-height:300px;}
 .reel-link-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:28px;}
 .reel-link-title{font-family:var(--fd);font-size:28px;letter-spacing:0.04em;}
 .reel-link-note{font-family:var(--fm);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mu);}
+.drive-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .drive-card{background:var(--card);border:1px solid var(--b1);padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:background 0.2s;}
 .drive-card:hover{background:var(--card2);}
 .drive-title{font-family:var(--fd);font-size:28px;letter-spacing:0.04em;line-height:1;}
@@ -174,23 +175,23 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
 .f-l,.f-r{font-family:var(--fm);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mu);}
 .f-r a{color:var(--pop);text-decoration:none;}
 @media(max-width:960px){
-nav{padding:16px 24px;}
-.nav-links{display:none;}
-#hero{padding:120px 24px 60px;}
-#about,#services,#work,#testimonials,#faq,#contact{padding:80px 24px;}
-#about{grid-template-columns:1fr;gap:40px;}
-.svc-header{grid-template-columns:1fr;gap:20px;}
-.svc-row4{grid-template-columns:1fr 1fr;}
-.svc-row3{grid-template-columns:1fr;}
-.vid-grid-2,.vid-grid-3{grid-template-columns:1fr;}
-.vid-9-16{padding-bottom:56.25%;}
-.tgrid{grid-template-columns:1fr;}
-.faq-grid{grid-template-columns:1fr;}
-.faq-aside{position:static;}
-.hero-peek{flex-direction:column;}
-.peek-item{border-right:none;border-bottom:1px solid var(--b1);}
-.hero-stats{flex-wrap:wrap;}
-footer{flex-direction:column;text-align:center;}
+  nav{padding:16px 24px;}
+  .nav-links{display:none;}
+  #hero{padding:120px 24px 60px;}
+  #about,#services,#work,#testimonials,#faq,#contact{padding:80px 24px;}
+  #about{grid-template-columns:1fr;gap:40px;}
+  .svc-header{grid-template-columns:1fr;gap:20px;}
+  .svc-row4{grid-template-columns:1fr 1fr;}
+  .svc-row3{grid-template-columns:1fr;}
+  .vid-grid-2,.vid-grid-3,.drive-cards{grid-template-columns:1fr;}
+  .tgrid{grid-template-columns:1fr;}
+  .faq-grid{grid-template-columns:1fr;}
+  .faq-aside{position:static;}
+  .hero-peek{flex-direction:column;}
+  .peek-item{border-right:none;border-bottom:1px solid var(--b1);}
+  .hero-stats{flex-wrap:wrap;}
+  footer{flex-direction:column;text-align:center;}
+  .vid-9-16{padding-bottom:56.25%;}
 }
 </style>
 </head>
@@ -229,17 +230,53 @@ footer{flex-direction:column;text-align:center;}
     <a href="#work" class="btn-g">See the Work</a>
   </div>
   <div class="hero-peek">
-    <a href="#work" class="peek-item"><span class="peek-cat">01 SaaS</span><span class="peek-title">SaaS Edits</span><span class="peek-desc">Product demos and explainers that sell</span><span class="peek-cta">Watch Now</span></a>
-    <a href="#work" class="peek-item"><span class="peek-cat">02 Podcast</span><span class="peek-title">Podcast</span><span class="peek-desc">Full lifecycle, guest to final export</span><span class="peek-cta">Watch Now</span></a>
-    <a href="#work" class="peek-item"><span class="peek-cat">03 Reels</span><span class="peek-title">Reels</span><span class="peek-desc">Cuts engineered for organic reach</span><span class="peek-cta">Watch Now</span></a>
-    <a href="#work" class="peek-item"><span class="peek-cat">04 Gaming</span><span class="peek-title">Game Content</span><span class="peek-desc">Trailers, highlights and community cuts</span><span class="peek-cta">View Work</span></a>
-    <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="peek-item"><span class="peek-cat">05 Strategy</span><span class="peek-title">Growth Systems</span><span class="peek-desc">AI workflows, SOPs and influencer strategy</span><span class="peek-cta">Let's Talk</span></a>
+    <a href="https://www.youtube.com/YOUR-SAAS-VIDEO" target="_blank" rel="noopener" class="peek-item">
+      <span class="peek-cat">01 Editing</span><span class="peek-title">SaaS Edits</span>
+      <span class="peek-desc">Product demos and explainers that sell</span>
+      <span class="peek-cta">Watch Example</span>
+    </a>
+    <a href="#work" class="peek-item">
+      <span class="peek-cat">02 Production</span><span class="peek-title">Podcast</span>
+      <span class="peek-desc">Full lifecycle, guest to final export</span>
+      <span class="peek-cta">Watch Now</span>
+    </a>
+    <a href="#work" class="peek-item">
+      <span class="peek-cat">03 Short-Form</span><span class="peek-title">Reels</span>
+      <span class="peek-desc">Cuts engineered for organic reach</span>
+      <span class="peek-cta">Watch Now</span>
+    </a>
+    <a href="#work" class="peek-item">
+      <span class="peek-cat">04 Gaming</span><span class="peek-title">Game Content</span>
+      <span class="peek-desc">Trailers, highlights and community cuts</span>
+      <span class="peek-cta">View Work</span>
+    </a>
+    <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="peek-item">
+      <span class="peek-cat">05 AI + Strategy</span><span class="peek-title">Growth Systems</span>
+      <span class="peek-desc">AI workflows, SOPs and influencer strategy</span>
+      <span class="peek-cta">Let's Talk</span>
+    </a>
   </div>
 </section>
-<div class="mq-wrap"><div class="mq-track">
-  <div class="mq-item">Podcast Production <em>*</em></div><div class="mq-item">SaaS Video Editing <em>*</em></div><div class="mq-item">Reels Strategy <em>*</em></div><div class="mq-item">Game Content <em>*</em></div><div class="mq-item">AI Workflows <em>*</em></div><div class="mq-item">Digital Marketing <em>*</em></div><div class="mq-item">Influencer Strategy <em>*</em></div><div class="mq-item">Content Strategy <em>*</em></div>
-  <div class="mq-item">Podcast Production <em>*</em></div><div class="mq-item">SaaS Video Editing <em>*</em></div><div class="mq-item">Reels Strategy <em>*</em></div><div class="mq-item">Game Content <em>*</em></div><div class="mq-item">AI Workflows <em>*</em></div><div class="mq-item">Digital Marketing <em>*</em></div><div class="mq-item">Influencer Strategy <em>*</em></div><div class="mq-item">Content Strategy <em>*</em></div>
-</div></div>
+<div class="mq-wrap">
+  <div class="mq-track">
+    <div class="mq-item">Podcast Production <em>*</em></div>
+    <div class="mq-item">SaaS Video Editing <em>*</em></div>
+    <div class="mq-item">Reels Strategy <em>*</em></div>
+    <div class="mq-item">Game Content <em>*</em></div>
+    <div class="mq-item">AI Workflows <em>*</em></div>
+    <div class="mq-item">Digital Marketing <em>*</em></div>
+    <div class="mq-item">Influencer Strategy <em>*</em></div>
+    <div class="mq-item">Content Strategy <em>*</em></div>
+    <div class="mq-item">Podcast Production <em>*</em></div>
+    <div class="mq-item">SaaS Video Editing <em>*</em></div>
+    <div class="mq-item">Reels Strategy <em>*</em></div>
+    <div class="mq-item">Game Content <em>*</em></div>
+    <div class="mq-item">AI Workflows <em>*</em></div>
+    <div class="mq-item">Digital Marketing <em>*</em></div>
+    <div class="mq-item">Influencer Strategy <em>*</em></div>
+    <div class="mq-item">Content Strategy <em>*</em></div>
+  </div>
+</div>
 <section id="about">
   <div class="fu">
     <div class="lbl">Who I Am</div>
@@ -266,93 +303,6 @@ footer{flex-direction:column;text-align:center;}
     </div>
   </div>
 </section>
-<section id="work">
-  <div class="work-hdr fu">
-    <div><div class="lbl">Portfolio</div><h2 class="sec-h2" style="font-size:clamp(44px,6vw,84px);">THE <span style="color:var(--pop)">WORK</span></h2></div>
-    <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-g">Want something like this? Let's talk</a>
-  </div>
-
-  <div class="work-block fu">
-    <span class="work-tag">SaaS Video Editing</span>
-    <h3 class="work-block-title">SAAS EDITS</h3>
-    <p class="work-block-desc">Short-form product and demo content cut for SaaS brands. Hook in the first second, value delivered before they scroll away.</p>
-    <div class="vid-grid-2">
-      <div class="vid-wrap vid-9-16"><iframe src="https://www.youtube.com/embed/fHnBIGcaCIM" title="SaaS Edit 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="vid-wrap vid-9-16"><iframe src="https://www.youtube.com/embed/w44wM6EeUvM" title="SaaS Edit 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    </div>
-  </div>
-
-  <div class="work-block fu d1">
-    <span class="work-tag">Podcast Production</span>
-    <h3 class="work-block-title">PODCAST EPISODES</h3>
-    <p class="work-block-desc">An animation and storytelling channel competing in a crowded space against channels with near-identical names. I came in, cleaned up the previous director's content calendar, restructured the release strategy, and started boosting views in a short time. These episodes are a direct result of that turnaround.</p>
-    <div class="vid-grid-2">
-      <div class="vid-wrap vid-16-9"><iframe src="https://www.youtube.com/embed/7ZVAMDQWsEY" title="The VA Group Episode 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="vid-wrap vid-16-9"><iframe src="https://www.youtube.com/embed/v7PIvadAe2U" title="The VA Group Episode 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    </div>
-  </div>
-
-  <div class="work-block fu d2">
-    <span class="work-tag">Short-Form / Reels</span>
-    <h3 class="work-block-title">SHORT-FORM CUTS</h3>
-    <p class="work-block-desc">Clips engineered for retention and reach. Built around a strong hook, paced for the platform, formatted to stop the scroll.</p>
-    <div class="vid-grid-3">
-      <div class="vid-wrap vid-9-16"><iframe src="https://www.youtube.com/embed/nMnubRPwUP8" title="Short Form Reel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="reel-link-card"><div class="reel-link-inner"><span class="work-tag">Instagram Reel</span><p class="reel-link-title">REEL 02</p><p class="reel-link-note">Opens on Instagram</p><a href="https://www.instagram.com/reel/DUt15PHE12Z/" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;">Watch Reel <span class="arr">&#8594;</span></a></div></div>
-      <div class="reel-link-card"><div class="reel-link-inner"><span class="work-tag">Instagram Reel</span><p class="reel-link-title">REEL 03</p><p class="reel-link-note">Opens on Instagram</p><a href="https://www.instagram.com/reel/DHBy8-jPK0g/" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;">Watch Reel <span class="arr">&#8594;</span></a></div></div>
-    </div>
-  </div>
-
-  <div class="work-block fu d3">
-    <span class="work-tag">Gaming Content</span>
-    <h3 class="work-block-title">GAME SHORTS</h3>
-    <p class="work-block-desc">Fast-cut game content built for short-form. High energy edits timed to keep viewers watching until the last second.</p>
-    <div class="vid-grid-2">
-      <div class="vid-wrap vid-9-16"><iframe src="https://www.youtube.com/embed/3jNz-OhrSbI" title="Game Short 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="vid-wrap vid-9-16"><iframe src="https://www.youtube.com/embed/5AvRnCEVYPs" title="Game Short 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    </div>
-  </div>
-
-  <div class="work-block fu d3">
-    <span class="work-tag">Documentary</span>
-    <h3 class="work-block-title">SUNSTAR BACOLOD DOC</h3>
-    <p class="work-block-desc">Award-winning documentary edit. Industry recognized. This is where the storytelling foundation was built — proving great editing does not need a big budget, just the right eye.</p>
-    <div class="drive-card" style="max-width:480px;">
-      <p class="drive-note">Available to view on request. Click below to get access.</p>
-      <a href="https://drive.google.com/file/d/1kAIYwu2LDEov5siO9tHEFHoJBm5Uuncm/view" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;">Request Access <span class="arr">&#8594;</span></a>
-    </div>
-  </div>
-
-  <div class="work-cta fu">
-    <p>Want to see more or discuss a project? I will walk you through everything personally.</p>
-    <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p">Book a Call <span class="arr">&#8594;</span></a>
-  </div>
-</section>
-<section id="testimonials">
-  <div class="fu"><div class="lbl">What Clients Say</div><h2 class="sec-h2" style="font-size:clamp(44px,6vw,84px);margin-bottom:48px;">PROVEN <span style="color:var(--pop)">RESULTS</span></h2></div>
-  <div class="tgrid fu d1">
-    <div class="tcard">
-      <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
-      <p class="tquote">&#8220;Detailed. Creative. Responsive. Nothing else to say! Just hire this guy!&#8221;</p>
-      <div><div class="tname">Upwork Client</div><div class="trole">Short Marriage Proposal Video - Feb 2022</div></div>
-    </div>
-    <div class="tcard">
-      <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
-      <p class="tquote">&#8220;Clean work, did exactly what was instructed. No complaints.&#8221;</p>
-      <div><div class="tname">Upwork Client</div><div class="trole">Martial Arts Gym - Video and Photography - Apr 2022</div></div>
-    </div>
-    <div class="tcard">
-      <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
-      <p class="tquote">&#8220;Thanks John, you the man.&#8221;</p>
-      <div><div class="tname">Vincent Infante</div><div class="trole">Client - Mar 2025</div></div>
-    </div>
-  </div>
-  <div class="test-ph fu d2">
-    <strong>More reviews coming soon</strong>
-    <p>Worked with JL? Share your experience</p>
-    <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p" style="margin-top:8px;">Book a Call <span class="arr">&#8594;</span></a>
-  </div>
-</section>
 <section id="services">
   <div class="svc-header fu">
     <div>
@@ -363,7 +313,7 @@ footer{flex-direction:column;text-align:center;}
   </div>
   <p class="sslbl fu">Core Services</p>
   <div class="svc-row4 fu d1">
-    <div class="sc"><div class="sc-num">01</div><div class="sc-ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#C8FF00" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#C8FF00" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="sc-title">SaaS Edits</div><p class="sc-desc">Demo videos, explainers, onboarding content and product reels that communicate value fast.</p><div class="sc-tags"><span class="stag">Demos</span><span class="stag">Explainers</span><span class="stag">Product</span></div></div>
+    <div class="sc"><div class="sc-num">01</div><div class="sc-ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#C8FF00" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#C8FF00" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="sc-title">SaaS Edits</div><p class="sc-desc">Demo videos, explainers, onboarding content and product reels that communicate value in under 90 seconds.</p><div class="sc-tags"><span class="stag">Demos</span><span class="stag">Explainers</span><span class="stag">Product</span></div></div>
     <div class="sc"><div class="sc-num">02</div><div class="sc-ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#C8FF00" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="#C8FF00" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="sc-title">Podcast</div><p class="sc-desc">Full episode production from guest research, recording, edit, audio mastering to multi-platform export.</p><div class="sc-tags"><span class="stag">Riverside</span><span class="stag">Audio Mix</span><span class="stag">Distribution</span></div></div>
     <div class="sc"><div class="sc-num">03</div><div class="sc-ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="#C8FF00" stroke-width="1.5" stroke-linejoin="round"/></svg></div><div class="sc-title">Reels</div><p class="sc-desc">Short-form vertical cuts engineered for watch time and organic reach on Instagram, TikTok, and YouTube Shorts.</p><div class="sc-tags"><span class="stag">IG Reels</span><span class="stag">TikTok</span><span class="stag">YT Shorts</span></div></div>
     <div class="sc"><div class="sc-num">04</div><div class="sc-ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" stroke="#C8FF00" stroke-width="1.5"/><polygon points="10,9 16,12 10,15" fill="#C8FF00"/></svg></div><div class="sc-title">Games</div><p class="sc-desc">Game trailers, highlight reels, streamer edits, and community content that captures energy and drives engagement.</p><div class="sc-tags"><span class="stag">Trailers</span><span class="stag">Highlights</span><span class="stag">Community</span></div></div>
@@ -377,6 +327,107 @@ footer{flex-direction:column;text-align:center;}
   <div class="svc-cta fu d2">
     <p class="svc-cta-txt">Not sure which service you need? <strong>Let's figure it out together.</strong></p>
     <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p">Book a Free Discovery Call <span class="arr">&#8594;</span></a>
+  </div>
+</section>
+<section id="work">
+  <div class="work-hdr fu">
+    <div><div class="lbl">Portfolio</div><h2 class="sec-h2" style="font-size:clamp(44px,6vw,84px);">THE <span style="color:var(--pop)">WORK</span></h2></div>
+    <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-g">Want something like this? Let's talk</a>
+  </div>
+
+  <div class="work-block fu">
+    <span class="work-tag">Podcast Production</span>
+    <h3 class="work-block-title">THE VA GROUP</h3>
+    <p class="work-block-desc">An animation and storytelling channel competing in a crowded space against channels with near-identical names. I came in, cleaned up the previous director's content calendar, restructured the release strategy, and started boosting views in a short time. These episodes are a direct result of that turnaround.</p>
+    <div class="vid-grid-2">
+      <div class="vid-wrap vid-16-9">
+        <iframe src="https://www.youtube.com/embed/7ZVAMDQWsEY" title="The VA Group Podcast Episode 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="vid-wrap vid-16-9">
+        <iframe src="https://www.youtube.com/embed/v7PIvadAe2U" title="The VA Group Podcast Episode 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-block fu d1">
+    <span class="work-tag">Short-Form / Reels</span>
+    <h3 class="work-block-title">SHORT-FORM CUTS</h3>
+    <p class="work-block-desc">Clips engineered for retention and reach. Built around a strong hook, paced for the platform, formatted to stop the scroll.</p>
+    <div class="vid-grid-3">
+      <div class="vid-wrap vid-9-16">
+        <iframe src="https://www.youtube.com/embed/nMnubRPwUP8" title="Short Form Reel 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="reel-link-card">
+        <div class="reel-link-inner">
+          <span class="work-tag">Instagram Reel</span>
+          <p class="reel-link-title">REEL 02</p>
+          <p class="reel-link-note">Opens on Instagram</p>
+          <a href="https://www.instagram.com/reel/DUt15PHE12Z/" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;">Watch Reel <span class="arr">&#8594;</span></a>
+        </div>
+      </div>
+      <div class="reel-link-card">
+        <div class="reel-link-inner">
+          <span class="work-tag">Instagram Reel</span>
+          <p class="reel-link-title">REEL 03</p>
+          <p class="reel-link-note">Opens on Instagram</p>
+          <a href="https://www.instagram.com/reel/DHBy8-jPK0g/" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;">Watch Reel <span class="arr">&#8594;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-block fu d2">
+    <span class="work-tag">Gaming Content</span>
+    <h3 class="work-block-title">GAME SHORTS</h3>
+    <p class="work-block-desc">Fast-cut game content built for short-form. High energy edits timed to keep viewers watching until the last second.</p>
+    <div class="vid-grid-2">
+      <div class="vid-wrap vid-9-16">
+        <iframe src="https://www.youtube.com/embed/3jNz-OhrSbI" title="Game Short 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="vid-wrap vid-9-16">
+        <iframe src="https://www.youtube.com/embed/5AvRnCEVYPs" title="Game Short 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-block fu d3">
+    <span class="work-tag">Documentary</span>
+    <h3 class="work-block-title">SUNSTAR BACOLOD DOC</h3>
+    <p class="work-block-desc">Award-winning documentary edit. Industry recognized. This is where the storytelling foundation was built — proving great editing does not need a big budget, just the right eye.</p>
+    <div class="drive-card" style="max-width:480px;">
+      <p class="drive-note">Available to view on request. Click below to get access.</p>
+      <a href="https://drive.google.com/file/d/1kAIYwu2LDEov5siO9tHEFHoJBm5Uuncm/view" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;margin-top:8px;">Request Access <span class="arr">&#8594;</span></a>
+    </div>
+  </div>
+
+  <div class="work-cta fu d3">
+    <p>Want to see more or discuss a project? I will walk you through everything personally.</p>
+    <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p">Book a Call <span class="arr">&#8594;</span></a>
+  </div>
+</section>
+<section id="testimonials">
+  <div class="fu"><div class="lbl">What Clients Say</div><h2 class="sec-h2" style="font-size:clamp(44px,6vw,84px);margin-bottom:48px;">PROVEN <span style="color:var(--pop)">RESULTS</span></h2></div>
+  <div class="tgrid fu d1">
+    <div class="tcard">
+      <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+      <p class="tquote">"Detailed. Creative. Responsive. Nothing else to say! Just hire this guy!"</p>
+      <div><div class="tname">Upwork Client</div><div class="trole">Short Marriage Proposal Video - Feb 2022</div></div>
+    </div>
+    <div class="tcard">
+      <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+      <p class="tquote">"Clean work, did exactly what was instructed. No complaints."</p>
+      <div><div class="tname">Upwork Client</div><div class="trole">Martial Arts Gym - Video and Photography - Apr 2022</div></div>
+    </div>
+    <div class="tcard">
+      <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+      <p class="tquote">"Thanks John, you the man."</p>
+      <div><div class="tname">Vincent Infante</div><div class="trole">Client - Mar 2025</div></div>
+    </div>
+  </div>
+  <div class="test-ph fu d2">
+    <strong>More reviews coming soon</strong>
+    <p>Worked with JL? Share your experience</p>
+    <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p" style="margin-top:8px;">Book a Call <span class="arr">&#8594;</span></a>
   </div>
 </section>
 <section id="faq">
@@ -423,19 +474,11 @@ var mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
 function animR(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(animR);}
 animR();
-document.querySelectorAll('a,button').forEach(function(el){
-  el.addEventListener('mouseenter',function(){cur.style.transform='translate(-50%,-50%) scale(2.5)';});
-  el.addEventListener('mouseleave',function(){cur.style.transform='translate(-50%,-50%) scale(1)';});
-});
+document.querySelectorAll('a,button').forEach(function(el){el.addEventListener('mouseenter',function(){cur.style.transform='translate(-50%,-50%) scale(2.5)';});el.addEventListener('mouseleave',function(){cur.style.transform='translate(-50%,-50%) scale(1)';});});
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:0.08});
 document.querySelectorAll('.fu').forEach(function(el){obs.observe(el);});
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    e.preventDefault();
-    var t=document.querySelector(a.getAttribute('href'));
-    if(t)t.scrollIntoView({behavior:'smooth'});
-  });
-});
-function tog
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+function toggleFaq(el){var item=el.closest('.faq-item');var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});if(!isOpen)item.classList.add('open');}
+</script>
 </body>
 </html>
