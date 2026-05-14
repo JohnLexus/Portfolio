@@ -111,8 +111,8 @@ nav.scrolled{background:rgba(8,4,5,0.92);backdrop-filter:blur(18px);-webkit-back
 .work-tag{font-family:var(--fm);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pop);display:inline-block;margin-bottom:10px;}
 .work-block-title{font-family:var(--fd);font-size:clamp(28px,4vw,52px);letter-spacing:0.04em;line-height:1;margin-bottom:12px;}
 .work-block-desc{font-size:14px;color:var(--mu2);font-weight:300;line-height:1.8;max-width:700px;margin-bottom:28px;}
-.vid-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:700px;}
-.vid-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px;align-items:start;}
+.vid-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:700px;margin:0 auto;}
+.vid-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px;align-items:start;margin:0 auto;}
 .vid-wrap{position:relative;width:100%;background:var(--card);border:1px solid var(--b1);border-radius:4px;overflow:hidden;}
 .vid-16-9{padding-bottom:56.25%;}
 .vid-9-16{padding-bottom:120%;}
@@ -221,35 +221,26 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
 
 /* ── Packages ── */
 #packages{padding:110px 52px;border-top:1px solid var(--b1);}
-.pkg-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;gap:20px;flex-wrap:wrap;}
-.pkg-tabs{display:flex;gap:1px;background:var(--b1);border:1px solid var(--b1);margin-bottom:40px;width:fit-content;}
+.pkg-tabs{display:flex;gap:1px;background:var(--b1);border:1px solid var(--b1);margin-bottom:48px;width:fit-content;}
 .pkg-tab{font-family:var(--fm);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;padding:14px 30px;cursor:pointer;background:var(--card);color:var(--mu2);transition:all 0.2s;border:none;outline:none;}
 .pkg-tab.active{background:var(--pop);color:var(--black);font-weight:700;}
 .pkg-tab:hover:not(.active){background:var(--card2);color:var(--white);}
 .pkg-group{display:none;}
 .pkg-group.active{display:block;}
-.pkg-grid{gap:1px;background:var(--b1);border:1px solid var(--b1);margin-bottom:2px;}
-.pkg-grid-4{display:grid;grid-template-columns:repeat(4,1fr);}
-.pkg-grid-3{display:grid;grid-template-columns:repeat(3,1fr);}
-.pkg-card{background:var(--black);padding:36px 28px;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden;transition:background 0.2s;}
-.pkg-card:hover{background:var(--card);}
-.pkg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pop);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
-.pkg-card:hover::before,.pkg-card.feat::before{transform:scaleX(1);}
-.pkg-card.feat{background:var(--card);}
-.pkg-badge{font-family:var(--fm);font-size:8px;letter-spacing:0.16em;text-transform:uppercase;background:var(--pop);color:var(--black);padding:4px 12px;width:fit-content;font-weight:700;}
-.pkg-name{font-family:var(--fd);font-size:34px;letter-spacing:0.04em;line-height:1;}
-.pkg-price{display:flex;align-items:baseline;gap:6px;}
-.pkg-amt{font-family:var(--fd);font-size:54px;color:var(--pop);line-height:1;}
-.pkg-per{font-family:var(--fm);font-size:10px;letter-spacing:0.1em;color:var(--mu);text-transform:uppercase;}
-.pkg-desc{font-size:13px;color:var(--mu2);font-weight:300;line-height:1.6;padding-bottom:16px;border-bottom:1px solid var(--b1);}
-.pkg-features{display:flex;flex-direction:column;gap:10px;flex:1;}
-.pkg-feat{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mu2);font-weight:300;line-height:1.5;list-style:none;}
-.pkg-feat::before{content:'--';color:var(--pop);flex-shrink:0;font-family:var(--fm);font-size:11px;margin-top:1px;}
-.pkg-cta{font-family:var(--fm);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:13px;text-align:center;border:1px solid var(--b2);color:var(--mu2);text-decoration:none;transition:all 0.2s;display:block;margin-top:auto;}
-.pkg-cta:hover{border-color:var(--pop);color:var(--pop);}
-.pkg-card.feat .pkg-cta{background:var(--pop);color:var(--black);border-color:var(--pop);font-weight:700;}
-.pkg-card.feat .pkg-cta:hover{background:var(--white);border-color:var(--white);color:var(--black);}
-.addon-wrap{border:1px solid var(--b1);overflow:hidden;margin-top:2px;}
+.pkg-row{display:flex;border:1px solid var(--b1);margin-bottom:8px;background:var(--card);transition:border-color 0.25s;}
+.pkg-row:hover{border-color:rgba(200,160,60,0.5);}
+.pkg-row.feat{border-color:var(--pop);}
+.pkg-left{flex:0 0 280px;padding:40px 36px;border-right:1px solid var(--b1);display:flex;flex-direction:column;gap:14px;}
+.pkg-right{flex:1;padding:40px 36px;display:flex;align-items:center;}
+.pkg-badge{font-family:var(--fm);font-size:8px;letter-spacing:0.16em;text-transform:uppercase;background:var(--pop);color:var(--black);padding:4px 10px;width:fit-content;font-weight:700;}
+.pkg-name{font-family:var(--fd);font-size:40px;letter-spacing:0.04em;line-height:1;}
+.pkg-price{font-family:var(--fb);font-size:22px;font-weight:700;color:var(--pop);}
+.pkg-per{font-family:var(--fm);font-size:10px;letter-spacing:0.1em;color:var(--mu);text-transform:uppercase;font-weight:400;margin-left:4px;}
+.pkg-desc{font-size:13px;color:var(--mu2);font-weight:300;line-height:1.7;flex:1;}
+.pkg-features{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 40px;width:100%;list-style:none;}
+.pkg-feat{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--mu2);font-weight:300;line-height:1.5;}
+.pkg-feat::before{content:"—";color:var(--pop);flex-shrink:0;font-family:var(--fm);font-size:10px;margin-top:2px;}
+.addon-wrap{border:1px solid var(--b1);overflow:hidden;margin-top:8px;}
 .addon-hdr{font-family:var(--fm);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--mu);padding:16px 28px;background:var(--off);border-bottom:1px solid var(--b1);}
 .addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--b1);}
 .addon-item{background:var(--card);display:flex;justify-content:space-between;align-items:center;padding:14px 28px;gap:20px;transition:background 0.2s;}
@@ -262,6 +253,13 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
   .fu{transition:none!important;opacity:1!important;transform:none!important;}
   .hero-eyebrow,.hero-h1,.hero-roles,.hero-sub,.hero-stats,.hero-actions,.hero-peek{animation:none!important;opacity:1!important;}
   .hero-bg-grid,.hero-bg-glow{will-change:auto;}
+  .pkg-tabs{flex-direction:column;width:100%;}
+  .pkg-row{flex-direction:column;}
+  .pkg-left{flex:none;border-right:none;border-bottom:1px solid var(--b1);padding:28px 24px;}
+  .pkg-right{padding:24px;}
+  .pkg-features{grid-template-columns:1fr;}
+  .addon-grid{grid-template-columns:1fr;}
+  .addon-item.full{grid-column:auto;}
 }
 
 /* ── Mobile ── */
@@ -269,7 +267,7 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
   nav{padding:16px 24px;}
   .nav-links{display:none;}
   #hero{padding:120px 24px 60px;}
-  #about,#work,#testimonials,#services,#faq,#contact{padding:80px 24px;}
+  #about,#work,#testimonials,#services,#faq,#contact,#packages{padding:80px 24px;}
   #about{grid-template-columns:1fr;gap:40px;}
   .svc-header{grid-template-columns:1fr;gap:20px;}
   .svc-row4{grid-template-columns:1fr 1fr;}
@@ -284,6 +282,9 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
   .hero-stats{flex-wrap:wrap;}
   footer{flex-direction:column;text-align:center;}
   .hero-bg-grid,.hero-bg-glow{will-change:auto;}
+.pkg-tabs{flex-direction:column;width:100%;}
+.addon-grid{grid-template-columns:1fr;}
+.pkg-hdr{flex-direction:column;align-items:flex-start;}
 }
 </style>
 </head>
@@ -518,25 +519,27 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
 </section>
 
 <section id="packages">
-  <div class="pkg-hdr fu">
-    <div>
-      <div class="lbl">Full Service</div>
-      <h2 class="sec-h2" style="font-size:clamp(44px,6vw,84px);">SERVICE <span style="color:var(--pop)">PACKAGES</span></h2>
-    </div>
-    <p style="font-size:15px;color:var(--mu2);max-width:400px;font-weight:300;line-height:1.8;">Transparent pricing. No surprises.<br>Pick your package, add what you need.</p>
+  <div class="fu">
+    <div class="lbl">Full Service</div>
+    <h2 class="sec-h2" style="font-size:clamp(44px,6vw,84px);">SERVICE <span style="color:var(--pop)">PACKAGES</span></h2>
+    <p style="font-size:15px;color:var(--mu2);max-width:520px;font-weight:300;line-height:1.8;margin-top:12px;">Transparent pricing. No surprises. Pick your package, add what you need.</p>
   </div>
   <div class="pkg-tabs fu d1">
     <button class="pkg-tab active" onclick="switchPkg('podcast',this)">&#127897;&nbsp; Podcast Production</button>
     <button class="pkg-tab" onclick="switchPkg('brand',this)">&#127919;&nbsp; Personal Brand Growth</button>
   </div>
-  <!-- Podcast Production -->
+
   <div class="pkg-group active" id="tab-podcast">
-    <p class="sslbl" style="margin-bottom:12px;">For podcasters &amp; content creators</p>
-    <div class="pkg-grid pkg-grid-4">
-      <div class="pkg-card">
+    <p class="sslbl" style="margin-bottom:20px;">For podcasters &amp; content creators</p>
+
+    <div class="pkg-row fu">
+      <div class="pkg-left">
         <div class="pkg-name">ESSENTIAL</div>
-        <div class="pkg-price"><span class="pkg-amt">$400</span><span class="pkg-per">/mo</span></div>
+        <div class="pkg-price">$400<span class="pkg-per">/mo</span></div>
         <p class="pkg-desc">Clean, consistent full video production for shows getting started.</p>
+        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:11px 22px;margin-top:auto;">Book a Call &#8594;</a>
+      </div>
+      <div class="pkg-right">
         <ul class="pkg-features">
           <li class="pkg-feat">2 episodes edited (up to 60 min each)</li>
           <li class="pkg-feat">6 short-form reels extracted &amp; edited</li>
@@ -544,27 +547,37 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
           <li class="pkg-feat">Basic AI audio enhancement included</li>
           <li class="pkg-feat">On-time delivery, no hour tracking</li>
         </ul>
-        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="pkg-cta">Book a Call &#8594;</a>
       </div>
-      <div class="pkg-card feat">
+    </div>
+
+    <div class="pkg-row feat fu d1">
+      <div class="pkg-left">
         <div class="pkg-badge">Most Popular</div>
         <div class="pkg-name">GROWTH</div>
-        <div class="pkg-price"><span class="pkg-amt">$700</span><span class="pkg-per">/mo</span></div>
+        <div class="pkg-price">$700<span class="pkg-per">/mo</span></div>
         <p class="pkg-desc">For podcasters publishing consistently and building a real audience.</p>
+        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:11px 22px;margin-top:auto;">Book a Call &#8594;</a>
+      </div>
+      <div class="pkg-right">
         <ul class="pkg-features">
           <li class="pkg-feat">4 episodes edited</li>
           <li class="pkg-feat">12 reels</li>
           <li class="pkg-feat">Branded lower thirds + intro/outro</li>
-          <li class="pkg-feat">AI audio + visual enhancement included</li>
+          <li class="pkg-feat">AI audio + visual enhancement</li>
           <li class="pkg-feat">Caption copy + platform-optimized titles</li>
           <li class="pkg-feat">Priority turnaround</li>
         </ul>
-        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="pkg-cta">Book a Call &#8594;</a>
       </div>
-      <div class="pkg-card">
+    </div>
+
+    <div class="pkg-row fu d2">
+      <div class="pkg-left">
         <div class="pkg-name">PRO BRAND</div>
-        <div class="pkg-price"><span class="pkg-amt"><section id="faq">,200</span><span class="pkg-per">/mo</span></div>
+        <div class="pkg-price">$1,200<span class="pkg-per">/mo</span></div>
         <p class="pkg-desc">A full content engine. You record, I handle everything else.</p>
+        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:11px 22px;margin-top:auto;">Book a Call &#8594;</a>
+      </div>
+      <div class="pkg-right">
         <ul class="pkg-features">
           <li class="pkg-feat">8 episodes edited</li>
           <li class="pkg-feat">24 reels</li>
@@ -574,12 +587,17 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
           <li class="pkg-feat">Monthly 30-min content strategy call</li>
           <li class="pkg-feat">Dedicated Notion/Airtable content tracker</li>
         </ul>
-        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="pkg-cta">Book a Call &#8594;</a>
       </div>
-      <div class="pkg-card">
+    </div>
+
+    <div class="pkg-row fu d3">
+      <div class="pkg-left">
         <div class="pkg-name">REELS ONLY</div>
-        <div class="pkg-price"><span class="pkg-amt">$200</span><span class="pkg-per">/mo</span></div>
+        <div class="pkg-price">$200<span class="pkg-per">/mo</span></div>
         <p class="pkg-desc">Already recording? I handle everything after.</p>
+        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:11px 22px;margin-top:auto;">Book a Call &#8594;</a>
+      </div>
+      <div class="pkg-right">
         <ul class="pkg-features">
           <li class="pkg-feat">12 reels/month</li>
           <li class="pkg-feat">Hook-first editing</li>
@@ -587,10 +605,10 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
           <li class="pkg-feat">Captions, titles &amp; hashtags</li>
           <li class="pkg-feat">Optimized for IG, TikTok, YouTube Shorts</li>
         </ul>
-        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="pkg-cta">Book a Call &#8594;</a>
       </div>
     </div>
-    <div class="addon-wrap">
+
+    <div class="addon-wrap fu">
       <div class="addon-hdr">Podcast Add-Ons</div>
       <div class="addon-grid">
         <div class="addon-item"><span class="addon-name">+2 Extra Episodes</span><span class="addon-price">+$80</span></div>
@@ -602,14 +620,18 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
       </div>
     </div>
   </div>
-  <!-- Personal Brand Growth -->
+
   <div class="pkg-group" id="tab-brand">
-    <p class="sslbl" style="margin-bottom:12px;">For individual content creators</p>
-    <div class="pkg-grid pkg-grid-3">
-      <div class="pkg-card">
+    <p class="sslbl" style="margin-bottom:20px;">For individual content creators</p>
+
+    <div class="pkg-row fu">
+      <div class="pkg-left">
         <div class="pkg-name">VISIBILITY</div>
-        <div class="pkg-price"><span class="pkg-amt">$350</span><span class="pkg-per">/mo</span></div>
-        <p class="pkg-desc">You're posting inconsistently and want to show up properly.</p>
+        <div class="pkg-price">$350<span class="pkg-per">/mo</span></div>
+        <p class="pkg-desc">You&#8217;re posting inconsistently and want to show up properly.</p>
+        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:11px 22px;margin-top:auto;">Book a Call &#8594;</a>
+      </div>
+      <div class="pkg-right">
         <ul class="pkg-features">
           <li class="pkg-feat">8 short-form reels/month</li>
           <li class="pkg-feat">Hook-first editing for IG, TikTok &amp; YouTube Shorts</li>
@@ -617,13 +639,18 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
           <li class="pkg-feat">Basic brand consistency (colors, fonts, style)</li>
           <li class="pkg-feat">Monthly content performance summary</li>
         </ul>
-        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="pkg-cta">Book a Call &#8594;</a>
       </div>
-      <div class="pkg-card feat">
+    </div>
+
+    <div class="pkg-row feat fu d1">
+      <div class="pkg-left">
         <div class="pkg-badge">Most Popular</div>
         <div class="pkg-name">AUTHORITY</div>
-        <div class="pkg-price"><span class="pkg-amt">$650</span><span class="pkg-per">/mo</span></div>
+        <div class="pkg-price">$650<span class="pkg-per">/mo</span></div>
         <p class="pkg-desc">Grow your audience and position yourself as the go-to in your niche.</p>
+        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:11px 22px;margin-top:auto;">Book a Call &#8594;</a>
+      </div>
+      <div class="pkg-right">
         <ul class="pkg-features">
           <li class="pkg-feat">16 short-form reels/month</li>
           <li class="pkg-feat">2 long-form videos (YouTube / LinkedIn)</li>
@@ -634,28 +661,32 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
           <li class="pkg-feat">Monthly 30-min brand strategy call</li>
           <li class="pkg-feat">Platform growth recommendations</li>
         </ul>
-        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="pkg-cta">Book a Call &#8594;</a>
       </div>
-      <div class="pkg-card">
+    </div>
+
+    <div class="pkg-row fu d2">
+      <div class="pkg-left">
         <div class="pkg-name">EMPIRE</div>
-        <div class="pkg-price"><span class="pkg-amt"><section id="faq">,100</span><span class="pkg-per">/mo</span></div>
+        <div class="pkg-price">$1,100<span class="pkg-per">/mo</span></div>
         <p class="pkg-desc">Build a personal brand that generates real opportunities &#8212; clients, deals, speaking, collabs.</p>
+        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:11px 22px;margin-top:auto;">Book a Call &#8594;</a>
+      </div>
+      <div class="pkg-right">
         <ul class="pkg-features">
           <li class="pkg-feat">24 short-form reels/month</li>
           <li class="pkg-feat">4 long-form videos (YouTube / LinkedIn / Podcast)</li>
-          <li class="pkg-feat">Full brand identity applied across all content</li>
+          <li class="pkg-feat">Full brand identity applied</li>
           <li class="pkg-feat">Complete caption copy &#8212; hook, body, CTA, hashtags</li>
           <li class="pkg-feat">Content calendar + posting schedule</li>
           <li class="pkg-feat">AI-enhanced production (Higgsfield, ElevenLabs)</li>
-          <li class="pkg-feat">Stock footage integration (billed per usage)</li>
           <li class="pkg-feat">Trend research &amp; monthly content brief</li>
           <li class="pkg-feat">Bi-weekly 30-min strategy calls</li>
           <li class="pkg-feat">Quarterly brand audit &amp; growth report</li>
         </ul>
-        <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="pkg-cta">Book a Call &#8594;</a>
       </div>
     </div>
-    <div class="addon-wrap">
+
+    <div class="addon-wrap fu d3">
       <div class="addon-hdr">Personal Brand Add-Ons</div>
       <div class="addon-grid">
         <div class="addon-item"><span class="addon-name">Brand Starter Kit (one-time)</span><span class="addon-price">$150</span></div>
