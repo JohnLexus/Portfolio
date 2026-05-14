@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Portfolio - Node Server (port 3000)",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["D:\\Portfolio building\\serve-portfolio.js"],
+      "port": 3000
+    }
+  ]
+}
