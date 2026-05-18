@@ -131,6 +131,10 @@ nav.scrolled{background:rgba(8,4,5,0.92);backdrop-filter:blur(18px);-webkit-back
 .car-dot{width:5px;height:5px;border-radius:50%;background:var(--b2);transition:background 0.2s,transform 0.2s;cursor:pointer;}
 .car-dot.active{background:var(--pop);transform:scale(1.3);}
 @media(max-width:640px){.reel-car{padding:0 20px;}.reel-car-slide{flex:0 0 100%;}}
+/* ── Wide carousel (16:9 podcasts) ── */
+.reel-car-wide{max-width:900px;}
+.reel-car-wide .reel-car-slide{flex:0 0 calc(50% - 6px);}
+@media(max-width:640px){.reel-car-wide .reel-car-slide{flex:0 0 100%;}}
 
 /* ── Package tab switcher ── */
 function switchPkg(tab,btn){
@@ -308,34 +312,35 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
 
 /* ── Stats Bar ── */
 .stats-bar{background:var(--card);border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);}
-.stats-wrap{display:flex;align-items:stretch;justify-content:center;padding:0;max-width:900px;}
-.stat-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:36px 20px;}
+.stats-wrap{display:flex;align-items:stretch;justify-content:center;padding:0;max-width:900px;margin:0 auto;width:100%;}
+.stat-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:36px 20px;text-align:center;}
 .stat-num{font-family:var(--fd);font-size:clamp(44px,5vw,64px);letter-spacing:0.04em;color:var(--pop);line-height:1;}
 .stat-label{font-family:var(--fm);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mu);text-align:center;}
 .stat-div{width:1px;background:var(--b1);align-self:stretch;flex-shrink:0;}
 @media(max-width:600px){.stats-wrap{flex-wrap:wrap;}.stat-item{flex:0 0 50%;}.stat-div{display:none;}.stat-item{border-bottom:1px solid var(--b1);}}
 
 /* ── Work Filter ── */
-.work-filter{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
-.wf-btn{font-family:var(--fm);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:8px 18px;background:transparent;border:1px solid var(--b2);color:var(--mu2);cursor:pointer;border-radius:2px;transition:all 0.2s;}
+.work-filter-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:28px 0 20px;}
+.wf-btn{font-family:var(--fm);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:9px 22px;background:transparent;border:1px solid var(--b2);color:var(--mu2);cursor:pointer;border-radius:2px;transition:all 0.2s;}
 .wf-btn:hover{border-color:var(--pop);color:var(--white);}
 .wf-btn.active{background:var(--pop);border-color:var(--pop);color:var(--black);}
 .work-block.hidden{display:none;}
 
 /* ── Process Section ── */
-#process{border-top:1px solid var(--b1);}
-.proc-hdr{margin-bottom:56px;}
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
-.proc-grid::before{content:'';position:absolute;top:24px;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,var(--b2) 15%,var(--b2) 85%,transparent);pointer-events:none;}
-.proc-step{padding:0 28px 0 0;position:relative;}
-.proc-num{font-family:var(--fd);font-size:56px;letter-spacing:0.04em;color:var(--b2);line-height:1;display:block;margin-bottom:20px;position:relative;z-index:1;background:var(--black);display:inline-block;padding-right:12px;}
+#process{border-top:1px solid var(--b1);padding-top:80px;}
+.proc-hdr{margin-bottom:48px;text-align:center;}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);}
+.proc-step{background:var(--black);padding:40px 32px;border-top:2px solid transparent;transition:border-color 0.3s;}
+.proc-step:first-child{border-top-color:var(--pop);}
+.proc-step:hover{border-top-color:var(--pop);}
+.proc-num{font-family:var(--fd);font-size:clamp(56px,6vw,80px);letter-spacing:0.04em;color:var(--b2);line-height:1;display:block;margin-bottom:20px;}
 .proc-step:first-child .proc-num{color:var(--pop);}
-.proc-line{width:1px;height:28px;background:var(--b2);margin:0 0 16px 0;}
+.proc-line{width:28px;height:2px;background:var(--b2);margin:0 0 18px 0;}
 .proc-step:first-child .proc-line{background:var(--pop);}
-.proc-title{font-family:var(--fd);font-size:22px;letter-spacing:0.04em;margin-bottom:10px;}
+.proc-title{font-family:var(--fd);font-size:clamp(18px,1.8vw,22px);letter-spacing:0.04em;margin-bottom:12px;}
 .proc-desc{font-family:var(--fb);font-size:14px;color:var(--mu2);line-height:1.7;}
-@media(max-width:768px){.proc-grid{grid-template-columns:1fr 1fr;gap:40px 24px;}.proc-grid::before{display:none;}}
-@media(max-width:480px){.proc-grid{grid-template-columns:1fr;}.proc-step{padding:0;}}
+@media(max-width:768px){.proc-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.proc-grid{grid-template-columns:1fr;}}
 
 /* ── Contact Form ── */
 .contact-layout{display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:start;margin-top:32px;width:100%;max-width:820px;}
@@ -372,7 +377,7 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
     <li><a href="#about">About</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#testimonials">Reviews</a></li>
-    <li><a href="#services">Services</a></li>
+    
     <li><a href="#packages">Pricing</a></li><li><a href="#process">Process</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li>
   </ul>
   <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
@@ -416,13 +421,13 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
 
 <div class="stats-bar">
     <div class="wrap stats-wrap">
-      <div class="stat-item fu"><span class="stat-num">50+</span><span class="stat-label">Videos Delivered</span></div>
+      <div class="stat-item fu"><span class="stat-num">170K+</span><span class="stat-label">Organic Views</span></div>
       <div class="stat-div"></div>
-      <div class="stat-item fu"><span class="stat-num">5M+</span><span class="stat-label">Views Generated</span></div>
-      <div class="stat-div"></div>
-      <div class="stat-item fu"><span class="stat-num">20+</span><span class="stat-label">Clients Served</span></div>
+      <div class="stat-item fu"><span class="stat-num">10+</span><span class="stat-label">Yrs in Media</span></div>
       <div class="stat-div"></div>
       <div class="stat-item fu"><span class="stat-num">5.0</span><span class="stat-label">Upwork Rating</span></div>
+      <div class="stat-div"></div>
+      <div class="stat-item fu"><span class="stat-num">A&ndash;Z</span><span class="stat-label">Full Lifecycle</span></div>
     </div>
   </div>
 
@@ -457,19 +462,20 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
   <div class="work-hdr fu">
     <div><div class="lbl">Portfolio</div><h2 class="sec-h2" style="font-size:clamp(44px,6vw,84px);">THE <span style="color:var(--pop)">WORK</span></h2></div>
     <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-g">Want something like this? Let's talk</a>
-    <div class="work-filter">
-      <button class="wf-btn active" data-filter="all">All</button>
-      <button class="wf-btn" data-filter="saas">SaaS</button>
-      <button class="wf-btn" data-filter="podcast">Podcast</button>
-      <button class="wf-btn" data-filter="short-form">Short-Form</button>
-      <button class="wf-btn" data-filter="gaming">Gaming</button>
-      <button class="wf-btn" data-filter="documentary">Documentary</button>
-    </div>
   </div>
 
-  <div class="work-block fu">
+  <div class="work-filter-bar">
+    <button class="wf-btn active" data-filter="all">All</button>
+    <button class="wf-btn" data-filter="saas">SaaS</button>
+    <button class="wf-btn" data-filter="podcast">Podcast</button>
+    <button class="wf-btn" data-filter="short-form">Short-Form</button>
+    <button class="wf-btn" data-filter="gaming">Gaming</button>
+    <button class="wf-btn" data-filter="documentary">Documentary</button>
+  </div>
+
+  <div class="work-block fu" data-cat="saas">
     <span class="work-tag">SaaS Video Editing</span>
-    <h3 class="work-block-title" data-cat="saas">SAAS EDITS</h3>
+    <h3 class="work-block-title">SAAS EDITS</h3>
     <p class="work-block-desc">Short-form product and demo content cut for SaaS brands. Hook in the first second, value delivered before they scroll away.</p>
     <div class="reel-car">
     <button class="car-btn car-prev hidden" aria-label="Previous">&#8249;</button>
@@ -498,29 +504,52 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
   </div>
   </div>
 
-  <div class="work-block fu d1">
+  <div class="work-block fu d1" data-cat="podcast">
     <span class="work-tag">Podcast Production</span>
-    <h3 class="work-block-title" data-cat="podcast">PODCAST EPISODES</h3>
+    <h3 class="work-block-title">PODCAST EPISODES</h3>
     <p class="work-block-desc">An animation and storytelling channel competing in a crowded space against channels with near-identical names. I came in, cleaned up the previous director's content calendar, restructured the release strategy, and started boosting views in a short time.</p>
-    <div class="vid-grid-2">
-      <div class="vid-wrap vid-16-9">
-        <div class="yt-lite" data-id="7ZVAMDQWsEY">
-          <img src="https://i.ytimg.com/vi/7ZVAMDQWsEY/hqdefault.jpg" alt="Podcast Episode 1" loading="lazy" decoding="async">
-          <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+    <div class="reel-car reel-car-wide">
+        <button class="car-btn car-prev hidden" aria-label="Previous">&#8249;</button>
+        <div class="reel-car-wrap">
+          <div class="reel-car-track">
+            <div class="reel-car-slide">
+          <div class="vid-wrap vid-16-9">
+            <div class="yt-lite" data-id="7ZVAMDQWsEY">
+              <img src="https://i.ytimg.com/vi/7ZVAMDQWsEY/hqdefault.jpg" alt="Podcast Episode 1" loading="lazy" decoding="async">
+              <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+            </div>
+          </div>
+        </div>
+            <div class="reel-car-slide">
+          <div class="vid-wrap vid-16-9">
+            <div class="yt-lite" data-id="v7PIvadAe2U">
+              <img src="https://i.ytimg.com/vi/v7PIvadAe2U/hqdefault.jpg" alt="Podcast Episode 2" loading="lazy" decoding="async">
+              <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+            </div>
+          </div>
+        </div>
+            <div class="reel-car-slide">
+          <div class="vid-wrap vid-16-9">
+            <div class="yt-lite" data-id="wWtCcssZWhw">
+              <img src="https://i.ytimg.com/vi/wWtCcssZWhw/hqdefault.jpg" alt="Podcast Episode 3" loading="lazy" decoding="async">
+              <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+        <button class="car-btn car-next" aria-label="Next">&#8250;</button>
+        <div class="car-dots">
+          <span class="car-dot active"></span>
+          <span class="car-dot"></span>
+          <span class="car-dot"></span>
         </div>
       </div>
-      <div class="vid-wrap vid-16-9">
-        <div class="yt-lite" data-id="v7PIvadAe2U">
-          <img src="https://i.ytimg.com/vi/v7PIvadAe2U/hqdefault.jpg" alt="Podcast Episode 2" loading="lazy" decoding="async">
-          <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
-        </div>
-      </div>
-    </div>
   </div>
 
-  <div class="work-block fu d2">
+  <div class="work-block fu d2" data-cat="short-form">
     <span class="work-tag">Short-Form / Reels</span>
-    <h3 class="work-block-title" data-cat="short-form">SHORT-FORM CUTS</h3>
+    <h3 class="work-block-title">SHORT-FORM CUTS</h3>
     <p class="work-block-desc">Clips engineered for retention and reach. Built around a strong hook, paced for the platform, formatted to stop the scroll.</p>
     <div class="reel-car">
     <button class="car-btn car-prev hidden" aria-label="Previous">&#8249;</button>
@@ -579,9 +608,9 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
   </div>
   </div>
 
-  <div class="work-block fu d3">
+  <div class="work-block fu d3" data-cat="gaming">
     <span class="work-tag">Gaming Content</span>
-    <h3 class="work-block-title" data-cat="gaming">GAME SHORTS</h3>
+    <h3 class="work-block-title">GAME SHORTS</h3>
     <p class="work-block-desc">Fast-cut game content built for short-form. High energy edits timed to keep viewers watching until the last second.</p>
     <div class="reel-car">
     <button class="car-btn car-prev hidden" aria-label="Previous">&#8249;</button>
@@ -610,9 +639,9 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
   </div>
   </div>
 
-  <div class="work-block fu d3">
+  <div class="work-block fu d3" data-cat="documentary">
     <span class="work-tag">Documentary</span>
-    <h3 class="work-block-title" data-cat="documentary">SUNSTAR BACOLOD DOC</h3>
+    <h3 class="work-block-title">SUNSTAR BACOLOD DOC</h3>
     <p class="work-block-desc">Award-winning documentary edit. Industry recognized. This is where the storytelling foundation was built.</p>
     <div class="drive-card" style="max-width:480px;">
       <p class="drive-note">Available to view on request. Click below to get access.</p>
@@ -652,38 +681,11 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
   </div>
 </section>
 
-<section id="services">
-  <div class="svc-header fu">
-    <div>
-      <div class="lbl">What I Do</div>
-      <h2 class="sec-h2" style="font-size:clamp(44px,6vw,84px);">MY <span style="color:var(--pop)">FULL</span><br><span style="-webkit-text-stroke:1px var(--white);color:transparent;">STACK</span></h2>
-    </div>
-    <p class="svc-intro">Core editing and production plus AI-powered workflows and growth systems to scale your brand without scaling your workload.</p>
-  </div>
-  <p class="sslbl fu">Core Services</p>
-  <div class="svc-row4 fu d1">
-    <div class="sc"><div class="sc-num">01</div><div class="sc-ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#C8A03C" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#C8A03C" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="sc-title">SaaS Edits</div><p class="sc-desc">Demo videos, explainers, onboarding content and product reels that communicate value fast.</p><div class="sc-tags"><span class="stag">Demos</span><span class="stag">Explainers</span><span class="stag">Product</span></div></div>
-    <div class="sc"><div class="sc-num">02</div><div class="sc-ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#C8A03C" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="#C8A03C" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="sc-title">Podcast</div><p class="sc-desc">Full episode production from guest research, recording, edit, audio mastering to multi-platform export.</p><div class="sc-tags"><span class="stag">Riverside</span><span class="stag">Audio Mix</span><span class="stag">Distribution</span></div></div>
-    <div class="sc"><div class="sc-num">03</div><div class="sc-ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="#C8A03C" stroke-width="1.5" stroke-linejoin="round"/></svg></div><div class="sc-title">Reels</div><p class="sc-desc">Short-form vertical cuts engineered for watch time and organic reach on Instagram, TikTok, and YouTube Shorts.</p><div class="sc-tags"><span class="stag">IG Reels</span><span class="stag">TikTok</span><span class="stag">YT Shorts</span></div></div>
-    <div class="sc"><div class="sc-num">04</div><div class="sc-ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" stroke="#C8A03C" stroke-width="1.5"/><polygon points="10,9 16,12 10,15" fill="#C8A03C"/></svg></div><div class="sc-title">Games</div><p class="sc-desc">Game trailers, highlight reels, streamer edits, and community content that captures energy and drives engagement.</p><div class="sc-tags"><span class="stag">Trailers</span><span class="stag">Highlights</span><span class="stag">Community</span></div></div>
-  </div>
-  <p class="sslbl fu" style="margin-top:2px;">AI and Growth Layer</p>
-  <div class="svc-row3 fu d1">
-    <div class="sc"><div class="sc-badge">AI-Powered</div><div class="sc-num">05</div><div class="sc-title">AI Workflow Systems</div><p class="sc-desc">Gemini, Claude, Higgsfield, Nano-banana, ElevenLabs and more to cut production time without sacrificing quality.</p><div class="sc-tags"><span class="stag">Gemini</span><span class="stag">Claude</span><span class="stag">Higgsfield</span><span class="stag">Automation</span></div></div>
-    <div class="sc"><div class="sc-badge">Operations</div><div class="sc-num">06</div><div class="sc-title">SOPs and Digital Marketing</div><p class="sc-desc">Standard operating procedures, content calendars, and digital marketing frameworks that keep things moving at scale.</p><div class="sc-tags"><span class="stag">SOPs</span><span class="stag">Content Cal</span><span class="stag">Strategy</span></div></div>
-    <div class="sc"><div class="sc-badge">Growth</div><div class="sc-num">07</div><div class="sc-title">Influencer Strategy</div><p class="sc-desc">Influencer frameworks that align creators with your brand from identifying the right voices to measuring what moves the needle.</p><div class="sc-tags"><span class="stag">Creator Match</span><span class="stag">Briefs</span><span class="stag">KPIs</span></div></div>
-  </div>
-  <div class="svc-cta fu d2">
-    <p class="svc-cta-txt">Not sure which service you need? <strong>Let's figure it out together.</strong></p>
-    <a href="https://calendly.com/johnlexus-hinolan/30min" target="_blank" rel="noopener" class="btn-p">Book a Free Discovery Call <span class="arr">&#8594;</span></a>
-  </div>
-</section>
-
-<section id="process" class="section">
+  <section id="process" class="section">
     <div class="wrap">
       <div class="proc-hdr fu">
         <div class="lbl">How It Works</div>
-        <h2 class="sec-h2">THE <span style="color:var(--pop)">PROCESS</span></h2>
+        <h2 class="sec-h2" style="font-size:clamp(44px,6vw,84px);">THE <span style="color:var(--pop)">PROCESS</span></h2>
       </div>
       <div class="proc-grid">
         <div class="proc-step fu">
@@ -1085,7 +1087,7 @@ document.querySelectorAll('.yt-lite').forEach(function(el){
 
 // ── Work Category Filter ─────────────────────────────────────────────────────
 (function(){
-  var btns=document.querySelectorAll('.wf-btn');
+  var btns=document.querySelectorAll('.work-filter-bar .wf-btn');
   var blocks=document.querySelectorAll('.work-block');
   btns.forEach(function(btn){
     btn.addEventListener('click',function(){
