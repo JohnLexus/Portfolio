@@ -116,6 +116,21 @@ nav.scrolled{background:rgba(8,4,5,0.92);backdrop-filter:blur(18px);-webkit-back
 .vid-wrap{position:relative;width:100%;background:var(--card);border:1px solid var(--b1);border-radius:4px;overflow:hidden;}
 .vid-16-9{padding-bottom:56.25%;}
 .vid-9-16{padding-bottom:120%;}
+/* ── Reel Carousel ── */
+.reel-car{position:relative;max-width:700px;margin:0 auto;padding:0 32px;}
+.reel-car-wrap{overflow:hidden;}
+.reel-car-track{display:flex;gap:12px;transition:transform 0.35s cubic-bezier(0.25,0.1,0.25,1);will-change:transform;cursor:grab;}
+.reel-car-track.dragging{cursor:grabbing;transition:none;}
+.reel-car-slide{flex:0 0 calc(50% - 6px);min-width:0;}
+.car-btn{position:absolute;top:42%;transform:translateY(-50%);z-index:10;width:36px;height:36px;background:var(--card);border:1px solid var(--b2);color:var(--pop);font-size:24px;cursor:pointer;border-radius:2px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;padding:0;line-height:1;}
+.car-btn:hover{background:var(--pop);color:var(--black);border-color:var(--pop);}
+.car-prev{left:0;}
+.car-next{right:0;}
+.car-btn.hidden{opacity:0;pointer-events:none;}
+.car-dots{display:flex;gap:6px;justify-content:center;margin-top:14px;}
+.car-dot{width:5px;height:5px;border-radius:50%;background:var(--b2);transition:background 0.2s,transform 0.2s;cursor:pointer;}
+.car-dot.active{background:var(--pop);transform:scale(1.3);}
+@media(max-width:640px){.reel-car{padding:0 20px;}.reel-car-slide{flex:0 0 100%;}}
 
 /* ── Package tab switcher ── */
 function switchPkg(tab,btn){
@@ -377,20 +392,31 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
     <span class="work-tag">SaaS Video Editing</span>
     <h3 class="work-block-title">SAAS EDITS</h3>
     <p class="work-block-desc">Short-form product and demo content cut for SaaS brands. Hook in the first second, value delivered before they scroll away.</p>
-    <div class="vid-grid-2">
-      <div class="vid-wrap vid-9-16">
-        <div class="yt-lite" data-id="fHnBIGcaCIM">
-          <img src="https://i.ytimg.com/vi/fHnBIGcaCIM/hqdefault.jpg" alt="SaaS Edit 1" loading="lazy" decoding="async">
-          <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+    <div class="reel-car">
+    <button class="car-btn car-prev hidden" aria-label="Previous">&#8249;</button>
+    <div class="reel-car-wrap">
+      <div class="reel-car-track">
+        <div class="reel-car-slide">
+        <div class="vid-wrap vid-9-16">
+          <div class="yt-lite" data-id="fHnBIGcaCIM">
+            <img src="https://i.ytimg.com/vi/fHnBIGcaCIM/hqdefault.jpg" alt="SaaS Edit 1" loading="lazy" decoding="async">
+            <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
         </div>
       </div>
-      <div class="vid-wrap vid-9-16">
-        <div class="yt-lite" data-id="w44wM6EeUvM">
-          <img src="https://i.ytimg.com/vi/w44wM6EeUvM/hqdefault.jpg" alt="SaaS Edit 2" loading="lazy" decoding="async">
-          <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="reel-car-slide">
+        <div class="vid-wrap vid-9-16">
+          <div class="yt-lite" data-id="w44wM6EeUvM">
+            <img src="https://i.ytimg.com/vi/w44wM6EeUvM/hqdefault.jpg" alt="SaaS Edit 2" loading="lazy" decoding="async">
+            <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
         </div>
+      </div>
       </div>
     </div>
+    <button class="car-btn car-next" aria-label="Next">&#8250;</button>
+    <div class="car-dots"><span class="car-dot active"></span><span class="car-dot"></span></div>
+  </div>
   </div>
 
   <div class="work-block fu d1">
@@ -417,36 +443,74 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
     <span class="work-tag">Short-Form / Reels</span>
     <h3 class="work-block-title">SHORT-FORM CUTS</h3>
     <p class="work-block-desc">Clips engineered for retention and reach. Built around a strong hook, paced for the platform, formatted to stop the scroll.</p>
-    <div class="vid-grid-3">
-      <div class="vid-wrap vid-9-16">
-        <div class="yt-lite" data-id="nMnubRPwUP8">
-          <img src="https://i.ytimg.com/vi/nMnubRPwUP8/hqdefault.jpg" alt="Short Form Reel" loading="lazy" decoding="async">
-          <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+    <div class="reel-car">
+    <button class="car-btn car-prev hidden" aria-label="Previous">&#8249;</button>
+    <div class="reel-car-wrap">
+      <div class="reel-car-track">
+        <div class="reel-car-slide">
+        <div class="vid-wrap vid-9-16">
+          <div class="yt-lite" data-id="nMnubRPwUP8">
+            <img src="https://i.ytimg.com/vi/nMnubRPwUP8/hqdefault.jpg" alt="Short Form Reel" loading="lazy" decoding="async">
+            <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
         </div>
       </div>
-      <div class="reel-link-card"><div class="reel-link-inner"><span class="work-tag">Instagram Reel</span><p class="reel-link-title">REEL 02</p><p class="reel-link-note">Opens on Instagram</p><a href="https://www.instagram.com/reel/DUt15PHE12Z/" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;">Watch Reel <span class="arr">&#8594;</span></a></div></div>
-      <div class="reel-link-card"><div class="reel-link-inner"><span class="work-tag">Instagram Reel</span><p class="reel-link-title">REEL 03</p><p class="reel-link-note">Opens on Instagram</p><a href="https://www.instagram.com/reel/DHBy8-jPK0g/" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;">Watch Reel <span class="arr">&#8594;</span></a></div></div>
+        <div class="reel-car-slide">
+        <div class="reel-link-card" style="height:100%;min-height:220px;">
+          <div class="reel-link-inner">
+            <span class="work-tag">Instagram Reel</span>
+            <p class="reel-link-title">REEL 02</p>
+            <p class="reel-link-note">Opens on Instagram</p>
+            <a href="https://www.instagram.com/reel/DUt15PHE12Z/" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;">Watch Reel <span class="arr">&#8594;</span></a>
+          </div>
+        </div>
+      </div>
+        <div class="reel-car-slide">
+        <div class="reel-link-card" style="height:100%;min-height:220px;">
+          <div class="reel-link-inner">
+            <span class="work-tag">Instagram Reel</span>
+            <p class="reel-link-title">REEL 03</p>
+            <p class="reel-link-note">Opens on Instagram</p>
+            <a href="https://www.instagram.com/reel/DHBy8-jPK0g/" target="_blank" rel="noopener" class="btn-p" style="font-size:10px;padding:10px 20px;">Watch Reel <span class="arr">&#8594;</span></a>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
+    <button class="car-btn car-next" aria-label="Next">&#8250;</button>
+    <div class="car-dots"><span class="car-dot active"></span><span class="car-dot"></span><span class="car-dot"></span></div>
+  </div>
   </div>
 
   <div class="work-block fu d3">
     <span class="work-tag">Gaming Content</span>
     <h3 class="work-block-title">GAME SHORTS</h3>
     <p class="work-block-desc">Fast-cut game content built for short-form. High energy edits timed to keep viewers watching until the last second.</p>
-    <div class="vid-grid-2">
-      <div class="vid-wrap vid-9-16">
-        <div class="yt-lite" data-id="3jNz-OhrSbI">
-          <img src="https://i.ytimg.com/vi/3jNz-OhrSbI/hqdefault.jpg" alt="Game Short 1" loading="lazy" decoding="async">
-          <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+    <div class="reel-car">
+    <button class="car-btn car-prev hidden" aria-label="Previous">&#8249;</button>
+    <div class="reel-car-wrap">
+      <div class="reel-car-track">
+        <div class="reel-car-slide">
+        <div class="vid-wrap vid-9-16">
+          <div class="yt-lite" data-id="3jNz-OhrSbI">
+            <img src="https://i.ytimg.com/vi/3jNz-OhrSbI/hqdefault.jpg" alt="Game Short 1" loading="lazy" decoding="async">
+            <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
         </div>
       </div>
-      <div class="vid-wrap vid-9-16">
-        <div class="yt-lite" data-id="5AvRnCEVYPs">
-          <img src="https://i.ytimg.com/vi/5AvRnCEVYPs/hqdefault.jpg" alt="Game Short 2" loading="lazy" decoding="async">
-          <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="reel-car-slide">
+        <div class="vid-wrap vid-9-16">
+          <div class="yt-lite" data-id="5AvRnCEVYPs">
+            <img src="https://i.ytimg.com/vi/5AvRnCEVYPs/hqdefault.jpg" alt="Game Short 2" loading="lazy" decoding="async">
+            <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></button>
+          </div>
         </div>
+      </div>
       </div>
     </div>
+    <button class="car-btn car-next" aria-label="Next">&#8250;</button>
+    <div class="car-dots"><span class="car-dot active"></span><span class="car-dot"></span></div>
+  </div>
   </div>
 
   <div class="work-block fu d3">
@@ -821,6 +885,51 @@ document.querySelectorAll('.yt-lite').forEach(function(el){
     el.appendChild(iframe);
   },{once:true});
 });
+
+// ── Reel Carousel ────────────────────────────────────────────────────────────
+(function(){
+  function initCar(el){
+    var track=el.querySelector('.reel-car-track');
+    var slides=Array.from(el.querySelectorAll('.reel-car-slide'));
+    var prev=el.querySelector('.car-prev');
+    var next=el.querySelector('.car-next');
+    var dotsEl=Array.from(el.querySelectorAll('.car-dot'));
+    var dotsWrap=el.querySelector('.car-dots');
+    var cur=0,startX=0,dragDelta=0,dragging=false;
+    function vis(){return window.innerWidth<=640?1:2;}
+    function maxIdx(){return Math.max(0,slides.length-vis());}
+    function go(idx){
+      cur=Math.max(0,Math.min(idx,maxIdx()));
+      var w=slides[0].offsetWidth+12;
+      track.style.transform='translateX(-'+(cur*w)+'px)';
+      if(prev)prev.classList.toggle('hidden',cur===0);
+      if(next)next.classList.toggle('hidden',cur>=maxIdx());
+      dotsEl.forEach(function(d,i){d.classList.toggle('active',i===cur);});
+      if(dotsWrap)dotsWrap.style.display=maxIdx()===0?'none':'flex';
+    }
+    if(prev)prev.addEventListener('click',function(){go(cur-1);});
+    if(next)next.addEventListener('click',function(){go(cur+1);});
+    dotsEl.forEach(function(d,i){d.addEventListener('click',function(){go(i);});});
+    // Drag
+    track.addEventListener('mousedown',function(e){
+      startX=e.clientX;dragging=true;track.classList.add('dragging');e.preventDefault();
+    });
+    window.addEventListener('mousemove',function(e){if(!dragging)return;dragDelta=e.clientX-startX;});
+    window.addEventListener('mouseup',function(){
+      if(!dragging)return;dragging=false;track.classList.remove('dragging');
+      if(Math.abs(dragDelta)>50)go(dragDelta<0?cur+1:cur-1);dragDelta=0;
+    });
+    // Touch swipe
+    track.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;},{passive:true});
+    track.addEventListener('touchend',function(e){
+      var dx=e.changedTouches[0].clientX-startX;
+      if(Math.abs(dx)>40)go(dx<0?cur+1:cur-1);
+    },{passive:true});
+    window.addEventListener('resize',function(){go(Math.min(cur,maxIdx()));});
+    go(0);
+  }
+  document.querySelectorAll('.reel-car').forEach(initCar);
+})();
 </script>
 </body>
 </html>
