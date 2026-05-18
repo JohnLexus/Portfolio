@@ -230,6 +230,7 @@ function switchPkg(tab,btn){
 .contact-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:64px;}
 .c-btn{font-family:var(--fm);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:13px 26px;text-decoration:none;border:1px solid var(--b2);color:var(--mu2);transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
 .c-btn:hover{border-color:var(--pop);color:var(--pop);}
+.contact-aside .c-btn{width:100%;justify-content:flex-end;}
 .c-btn.main{background:var(--pop);color:var(--black);border-color:var(--pop);font-weight:700;}
 .c-btn.main:hover{background:var(--white);border-color:var(--white);}
 
@@ -352,10 +353,10 @@ footer{padding:24px 52px;border-top:1px solid var(--b1);display:flex;justify-con
 .cf-input:focus{border-color:var(--pop);}
 .cf-input::placeholder{color:var(--mu);}
 .cf-textarea{resize:vertical;min-height:120px;}
-.cf-submit{font-family:var(--fd);font-size:18px;letter-spacing:0.08em;background:var(--pop);color:var(--black);border:none;padding:14px 28px;cursor:pointer;border-radius:2px;transition:all 0.2s;align-self:center;display:block;margin:0 auto;}
+.cf-submit{font-family:var(--fd);font-size:18px;letter-spacing:0.08em;background:var(--pop);color:var(--black);border:none;padding:14px 28px;cursor:pointer;border-radius:2px;transition:all 0.2s;align-self:flex-start;}
 .cf-submit:hover{background:var(--white);}
 .cf-note{font-family:var(--fm);font-size:10px;letter-spacing:0.08em;color:var(--mu);margin:0;}
-.contact-aside{display:flex;flex-direction:column;gap:12px;}
+.contact-aside{display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
 @media(max-width:680px){.contact-layout{grid-template-columns:1fr;}.cf-row{grid-template-columns:1fr;}.contact-aside{flex-direction:row;flex-wrap:wrap;}}
 
 /* ── Floating CTA ── */
